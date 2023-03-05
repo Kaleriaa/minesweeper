@@ -1,4 +1,6 @@
 import { GameSmile } from '@features/game-smile/ui'
+import { MinesCounter } from '@features/mines-counter/ui'
+import { Timer } from '@features/timer/ui'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -19,14 +21,4 @@ const GameMenu = styled.div`
     justify-content: space-between;
     padding: 15px;
     box-shadow: var(--dark-shadow), var(--light-shadow);
-`
-const MinesCounter = styled.div`
-    height: 100%;
-    width: 70px;
-    background-color: aliceblue;
-`
-const Timer = styled.div`
-    height: 100%;
-    width: 70px;
-    background-color: aliceblue;
 `

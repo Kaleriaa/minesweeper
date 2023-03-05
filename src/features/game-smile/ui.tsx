@@ -22,12 +22,13 @@ export const GameSmile = () => {
     const clicked = fieldClickedModel.selectors.useFieldClicked()
     const src = getSmile(state, clicked)
 
-    return <Smile src={src} />
+    return <Smile onClick={() => gameModel.events.restart()} src={src} />
 }
 
 const Smile = styled.button<{ src: string }>`
     background-image: url(${(props) => props.src});
-    background-size: 42px;
+    background-size: 38px;
+    appearance: none;
     width: 42px;
     height: 42px;
     &:active {

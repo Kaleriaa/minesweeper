@@ -5,6 +5,7 @@ export type Cell = {
     type: CellType
     aroundMinesCount: AroundMinesCount
     isFlagged: boolean
+    isQuestion: boolean
 }
 
 export enum CellType {

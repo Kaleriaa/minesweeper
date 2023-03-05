@@ -8,7 +8,7 @@ export const Field = () => {
         const t = []
         for (let i = 0; i < FIELD_SIZE; i++) {
             for (let j = 0; j < FIELD_SIZE; j++) {
-                t.push(<Cell x={i} y={j} />)
+                t.push(<Cell key={i + 'cell' + j} x={i} y={j} />)
             }
         }
 

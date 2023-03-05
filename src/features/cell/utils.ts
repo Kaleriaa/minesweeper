@@ -10,8 +10,12 @@ import six from '@shared/assets/field/six.png'
 import seven from '@shared/assets/field/seven.png'
 import eight from '@shared/assets/field/eight.png'
 import mine from '@shared/assets/field/mine.png'
+import foundMine from '@shared/assets/field/found-mine.png'
+import flag from '@shared/assets/field/flag.png'
+import quest from '@shared/assets/field/quest.png'
+import explodedMine from '@shared/assets/field/exploded-mine.png'
 
-export const getImageUrl = (cell: Cell) => {
+export const getImageUrl = (cell: Cell, isBombed: boolean) => {
     if (!cell.hidden) {
         if (cell.type === CellType.Empty) {
             switch (cell.aroundMinesCount) {
@@ -37,8 +41,20 @@ export const getImageUrl = (cell: Cell) => {
         }
 
         if (cell.type === CellType.Mine) {
+            if (cell.isFlagged) {
+                return foundMine
+            }
+            if (isBombed) return explodedMine
             return mine
         }
+    }
+
+    if (cell.isFlagged) {
+        return flag
+    }
+
+    if (cell.isQuestion) {
+        return quest
     }
 
     return base
